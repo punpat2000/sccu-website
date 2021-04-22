@@ -1,1 +1,2 @@
 # sccu-website
+# yarn install
