@@ -147,6 +147,7 @@
       "element",
       "app",
       "kebab-case"
-    ]
+    ],
+    "extends": ["tslint:latest", "tslint-config-prettier"]
   }
 }
