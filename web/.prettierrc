@@ -5,5 +5,15 @@
   "singleQuote": true,
   "printWidth": 80,
   "arrowParens": "always",
-  "useTabs": true
+  "useTabs": true,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": { "parser": "html" }
+    },
+    {
+      "files": "*.component.html",
+      "options": { "parser": "angular" }
+    }
+  ]
 }

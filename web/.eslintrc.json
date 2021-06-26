@@ -10,13 +10,14 @@
       ],
       "parserOptions": {
         "project": [
-          "tsconfig.json"
+          "./tsconfig.json"
         ],
         "createDefaultProgram": true
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended"
       ],
       "rules": {
         "@angular-eslint/directive-selector": [
@@ -42,8 +43,7 @@
         "*.html"
       ],
       "extends": [
-        "plugin:@angular-eslint/template/recommended",
-        "plugin:prettier/recommended"
+        "plugin:@angular-eslint/template/recommended"
       ],
       "rules": {}
     }
