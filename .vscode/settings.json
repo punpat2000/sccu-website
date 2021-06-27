@@ -1,5 +1,6 @@
 {
 	"eslint.workingDirectories": [
 		{ "directory": "./web", "changeProcessCWD": true }
-	]
+	],
+	"editor.formatOnSave": true
 }
