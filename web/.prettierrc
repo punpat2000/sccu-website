@@ -6,5 +6,16 @@
   "printWidth": 80,
   "arrowParens": "always",
   "useTabs": true,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": { "parser": "html" }
+    },
+
+    {
+      "files": "*.component.html",
+      "options": { "parser": "angular" }
+    }
+  ]
 }
