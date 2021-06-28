@@ -5,8 +5,8 @@
   "singleQuote": true,
   "printWidth": 80,
   "arrowParens": "always",
-  "useTabs": true,
-  "endOfLine": "auto",
+  "useTabs": false,
+  "endOfLine": "lf",
   "overrides": [
     {
       "files": "*.html",
