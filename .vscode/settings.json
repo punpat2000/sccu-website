@@ -2,6 +2,9 @@
 	"eslint.workingDirectories": [
 		{ "directory": "./web", "changeProcessCWD": true }
 	],
+	"files.eol": "\n",
 	"editor.formatOnSave": true,
-	"files.eol": "\n"
+	"editor.tabSize": 2,
+	"editor.insertSpaces": true,
+	"editor.detectIndentation": true
 }
