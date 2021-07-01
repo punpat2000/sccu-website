@@ -1,10 +1,10 @@
-import express, { RequestHandler } from 'express';
+import express from 'express';
 
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.use(express.urlencoded({ extended: false }) as RequestHandler);
-app.use(express.json() as RequestHandler);
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('hello world!');
