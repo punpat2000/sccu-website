@@ -4,7 +4,8 @@ import { TrackingComponent } from './tracking/tracking.component';
 
 const routes: Routes = [
   {
-    path:'tracking', component: TrackingComponent
+    path: 'tracking',
+    component: TrackingComponent,
   },
 ];
 
