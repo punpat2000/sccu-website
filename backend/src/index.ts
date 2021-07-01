@@ -1,3 +1,5 @@
 import { app, port } from './app';
 
-app.listen(port);
+app.listen(port, () => {
+  console.log(`running on ${port}`);
+});
