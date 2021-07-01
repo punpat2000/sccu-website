@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TrackingComponent } from './tracking/tracking.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TrackingComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
