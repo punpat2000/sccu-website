@@ -4,6 +4,7 @@ import AES from 'crypto-js/aes';
 import Utf8 from 'crypto-js/enc-utf8';
 import Base64 from 'crypto-js/enc-base64';
 import { isQuery } from '../utils/is-query.util';
+import SECRET from '../config/secret.config';
 
 /**
  * Decrypt the request
@@ -15,11 +16,10 @@ const decryptRequest = (
 ): void => {
   try {
     if (!req.query.id) {
-      res.sendStatus(400);
+      res.sendStatus(404);
     }
 
     const id = req.query.id;
-    const SECRET = 'sccu-website-testing';
     const reb64 = Hex.parse(id as string);
     const bytes = reb64.toString(Base64);
     const decrypt = AES.decrypt(bytes, SECRET);
