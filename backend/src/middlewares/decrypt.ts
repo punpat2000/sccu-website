@@ -15,8 +15,9 @@ const decryptRequest = (
   next: NextFunction
 ): void => {
   try {
-    if (!req.query.id) {
+    if (!req?.query?.id) {
       res.sendStatus(404);
+      return;
     }
 
     const id = req.query.id;
@@ -31,7 +32,6 @@ const decryptRequest = (
     }
 
     res.locals.id = obj.id;
-    console.log(`id=${obj.id}`);
     next();
   } catch (err) {
     res.sendStatus(400);

@@ -15,6 +15,7 @@ describe('test query', () => {
     for (let i = 1; i < 15; i++) {
       const obj: Query = { id: i };
       const encrypted: string = encrypt(obj);
+      cy.log(`tracking id: ${encrypted}`);
       cy.request(`http://localhost:4000/getDataTest?id=${encrypted}`).then(
         (resp) => {
           expect(resp.status).to.eq(200);
