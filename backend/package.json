@@ -24,6 +24,6 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "googleapis": "^78.0.0"
+    "googleapis": "^80.0.0"
   }
 }
