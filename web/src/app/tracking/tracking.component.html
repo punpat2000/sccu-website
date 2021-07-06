@@ -1,3 +1,4 @@
+<app-navbar></app-navbar><br />
 <div class="container mx-auto text-center mt-8 font-mitr">
   <div class="inline-flex shadow-lg">
     <button class="bg-pink hover:bg-red-400 text-white py-2 px-4">
@@ -14,64 +15,211 @@
       placeholder="ค้นหาเรื่องร้องเรียน"
     />
     <button class="bg-pink hover:bg-red-400 text-white p-2 pl-4 pr-4 shadow-lg">
-      <p class="text-lg">SEARCH</p>
+      <p class="text-xs lg:text-lg">SEARCH</p>
     </button>
   </div>
   <h1 class="text-xl md:text-4xl mt-16 mr-4 ml-4 font-mitr text-brown">
-    ความคืบหน้าเรื่องร้องเรียนกรณีมีบุคคลภายนอกเข้ามาบริเวณหอพักนิสิต
+    ความคืบหน้าเรื่อง{{ track_data.topic }}
   </h1>
-  <br />
-  <div class="my-16 static flex justify-center text-brown">
-    <div class="flex items-center">
-      <div
-        class="w-70 h-70 rounded-full border-white border-4 absolute shadow-2xl"
-      >
-        <img src="../../assets/sccu.png" />
-      </div>
-      <p class="absolute mt-48 text-base md:text-xl">สภานิสิตรับ<br />เข้าพิจารณา</p>
-      <div
-        class="w-70 h-70 rounded-full border-white border-4 absolute shadow-2xl"
-        style="margin-left: 11%"
-      >
-        <img src="../../assets/consider.png" />
-      </div>
-      <p class="absolute mt-48 text-base md:text-xl" style="margin-left: 11%">
-        อยู่ในระหว่าง<br />การดำเนินงานโดย<br />คณะกรรมาธิการ
-      </p>
-      <div
-        class="w-70 h-70 rounded-full border-white border-4 absolute shadow-2xl"
-        style="margin-left: 22%"
-      >
-        <img src="../../assets/office.png" />
-      </div>
-      <p class="absolute mt-48 text-base md:text-xl" style="margin-left: 22%">
-        อยู่ในระหว่าง<br />การหารือกับหน่วยงาน<br />ที่เกี่ยวข้อง
-      </p>
-      <div
-        class="w-70 h-70 rounded-full border-white border-4 absolute shadow-2xl"
-        style="margin-left: 33%"
-      >
-        <img src="../../assets/send.png" />
-      </div>
-      <p class="absolute mt-48 text-base md:text-xl" style="margin-left: 33%">
-        กำลังดำเนินการ<br />ส่งหนังสือ
-      </p>
-      <div
-        class="w-70 h-70 rounded-full border-white border-4 absolute shadow-2xl"
-        style="margin-left: 44%"
-      >
-        <img src="../../assets/receive.png" />
-      </div>
-      <p class="absolute mt-48 text-base md:text-xl" style="margin-left: 44%">
-        ได้รับการตอบกลับ<br />จากหน่วยงาน<br />ที่เกี่ยวข้องแล้ว
-      </p>
-    </div>
+  <br /><br />
+
+  <div class="grid grid-cols-5 lg:p-16 p-4 text-brown">
     <div
-      class="h-full w-3/5 border-dotted border-8 border-lightgray"
+      class="border-dotted lg:border-8 border-4 border-lightgray lg:mr-2 mr-1"
       style="border-top: 6px"
-    ></div>
+    >
+      <div class="relative flex justify-center">
+        <div
+          class="
+            w-12
+            lg:w-28
+            h-12
+            lg:h-28
+            absolute
+            -mt-6
+            lg:-mt-12
+            rounded-full
+            bg-pink
+            lg:border-4
+            border-2 border-white
+            lg:shadow-2xl
+            md:shadow-md
+          "
+        >
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate > 0"
+            src="../../assets/sccu.png"
+          />
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate === 0"
+            src="../../assets/no-sccu.png"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="border-dotted lg:border-8 border-4 border-lightgray lg:mr-2 mr-1"
+      style="border-top: 6px"
+    >
+      <div class="relative flex justify-center">
+        <div
+          class="
+            w-12
+            lg:w-28
+            h-12
+            lg:h-28
+            absolute
+            -mt-6
+            lg:-mt-12
+            rounded-full
+            bg-pink
+            lg:border-4
+            border-2 border-white
+            lg:shadow-2xl
+            md:shadow-md
+          "
+        >
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate > 1"
+            src="../../assets/consider.png"
+          />
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate <= 1"
+            src="../../assets/no-consider.png"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="border-dotted lg:border-8 border-4 border-lightgray lg:mr-2 mr-1"
+      style="border-top: 6px"
+    >
+      <div class="relative flex justify-center">
+        <div
+          class="
+            w-12
+            lg:w-28
+            h-12
+            lg:h-28
+            absolute
+            -mt-6
+            lg:-mt-12
+            rounded-full
+            bg-pink
+            lg:border-4
+            border-2 border-white
+            lg:shadow-2xl
+            md:shadow-md
+          "
+        >
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate > 2"
+            src="../../assets/office.png"
+          />
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate <= 2"
+            src="../../assets/no-office.png"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="border-dotted lg:border-8 border-4 border-lightgray lg:mr-2 mr-1"
+      style="border-top: 6px"
+    >
+      <div class="relative flex justify-center">
+        <div
+          class="
+            w-12
+            lg:w-28
+            h-12
+            lg:h-28
+            absolute
+            -mt-6
+            lg:-mt-12
+            rounded-full
+            bg-pink
+            lg:border-4
+            border-2 border-white
+            lg:shadow-2xl
+            md:shadow-md
+          "
+        >
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate > 3"
+            src="../../assets/send.png"
+          />
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate <= 3"
+            src="../../assets/no-send.png"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="border-dotted lg:border-8 border-4 border-lightgray lg:mr-2 mr-1"
+      style="border-top: 6px"
+    >
+      <div class="relative flex justify-center">
+        <div
+          class="
+            w-12
+            lg:w-28
+            h-12
+            lg:h-28
+            absolute
+            -mt-6
+            lg:-mt-12
+            rounded-full
+            bg-pink
+            lg:border-4
+            border-2 border-white
+            lg:shadow-2xl
+            md:shadow-md
+          "
+        >
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate > 4"
+            src="../../assets/receive.png"
+          />
+          <img
+            class="w-full h-full"
+            *ngIf="track_data.success_rate <= 4"
+            src="../../assets/no-receive.png"
+          />
+        </div>
+      </div>
+    </div>
   </div>
-  <br />
+  <div
+    class="
+      grid grid-cols-5
+      justify-items-center
+      lg:p-16
+      p-4
+      lg:text-lg
+      text-xs text-center text-brown
+    "
+  >
+    <div class="lg:w-4/5">สภานิสิตรับเข้าพิจารณา</div>
+    <div class="lg:w-4/5">อยู่ในระหว่างการดำเนินงานโดยคณะกรรมาธิการ</div>
+    <div class="lg:w-4/5">อยู่ในระหว่างการหารือกับหน่วยงานที่เกี่ยวข้อง</div>
+    <div class="lg:w-4/5">กำลังดำเนินการส่งหนังสือ</div>
+    <div class="lg:w-4/5">ได้รับการตอบกลับจากหน่วยงานที่เกี่ยวข้องแล้ว</div>
+  </div>
 
   <br /><br />
   <h2 class="text-left text-lg md:text-2xl ml-6 font-bold text-brown">
@@ -79,7 +227,7 @@
   </h2>
   <br />
   <h2 class="text-left text-base md:text-xl ml-3 pl-16 mr-3 text-brown">
-    ความคืบหน้าเรื่องร้องเรียนกรณีมีบุคคลภายนอกเข้ามาบริเวณหอพักนิสิต
+    ความคืบหน้าเรื่อง{{ track_data.topic }}
   </h2>
   <br />
 
@@ -89,17 +237,17 @@
       md:grid
       grid-cols-12
       mx-auto
-      p-2
+      mb-1
       text-xs
       md:text-base
       text-brown
     "
+    *ngFor="let track of track_data.process"
   >
-    <div class="flex flex-row-reverse md:contents text-xs md:text-base">
+    <div class="flex flex-row md:contents text-xs md:text-base">
       <div class="col-start-2 col-end-3 p-4 my-4">
         <p class="leading-tight justify-center text-black">
-          <span class="italic">23/04/64</span>
-          15.03 น.
+          <span class="italic">{{ track.date }}</span>
         </p>
       </div>
 
@@ -121,67 +269,8 @@
             bg-white
             border-pink border-4
           "
+          *ngIf="track.success === true"
         ></div>
-      </div>
-
-      <div class="col-start-4 col-end-8 p-4 my-4">
-        <p class="leading-tight text-justify text-black">
-          ได้รับการตอบกลับจากสำนักงานหอพักนิสิตแล้วผลสรุปว่าจะมีการจัดการปัญหาและเพิ่มมาตรการให้รัดกุมมากขึ้น
-        </p>
-      </div>
-    </div>
-
-    <div class="flex flex-row-reverse md:contents text-xs md:text-base">
-      <div class="col-start-2 col-end-3 p-4 my-4">
-        <p class="leading-tight justify-center text-black">
-          <span class="italic">23/04/64</span>
-          15.03 น.
-        </p>
-      </div>
-
-      <div class="col-start-3 col-end-4 md:mx-auto relative mr-4 ml-2 mt-1">
-        <div class="h-full w-6 flex items-center justify-center">
-          <div
-            class="h-full w-1 border-dotted border-4 border-lightgray"
-            style="border-left: 6px"
-          ></div>
-        </div>
-        <div
-          class="
-            w-6
-            h-6
-            absolute
-            top-1/2
-            -mt-3
-            rounded-full
-            bg-white
-            border-pink border-4
-          "
-        ></div>
-      </div>
-
-      <div class="col-start-4 col-end-8 p-4 my-4">
-        <p class="leading-tight text-justify text-black">
-          ได้รับการตอบกลับจากสำนักงานหอพักนิสิตแล้วผลสรุปว่าจะมีการจัดการปัญหาและเพิ่มมาตรการให้รัดกุมมากขึ้น
-        </p>
-      </div>
-    </div>
-
-    <div class="flex flex-row-reverse md:contents text-xs md:text-base">
-      <div class="col-start-2 col-end-3 p-4 my-4">
-        <p class="leading-tight justify-center text-black">
-          <span class="italic">23/04/64</span>
-          15.03 น.
-        </p>
-      </div>
-
-      <div class="col-start-3 col-end-4 md:mx-auto relative mr-4 ml-2 mt-1">
-        <div class="h-full w-6 flex items-center justify-center">
-          <div
-            class="h-full w-1 border-dotted border-4 border-lightgray"
-            style="border-left: 6px"
-          ></div>
-        </div>
         <div
           class="
             w-6
@@ -193,14 +282,16 @@
             bg-white
             border-lightgray border-4
           "
+          *ngIf="track.success === false"
         ></div>
       </div>
 
       <div class="col-start-4 col-end-8 p-4 my-4">
         <p class="leading-tight text-justify text-black">
-          ได้รับการตอบกลับจากสำนักงานหอพักนิสิตแล้วผลสรุปว่าจะมีการจัดการปัญหาและเพิ่มมาตรการให้รัดกุมมากขึ้น
+          {{ track.detail }}
         </p>
       </div>
     </div>
   </div>
+  <br /><br />
 </div>

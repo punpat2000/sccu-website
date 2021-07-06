@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TrackingService } from '../services/tracking-service/tracking.service';
 
 @Component({
   selector: 'app-tracking',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./tracking.component.scss'],
 })
 export class TrackingComponent {
-  constructor() {}
+  track_data: any;
+
+  constructor(public trackService: TrackingService) {
+    this.track_data = trackService.trackingdata;
+  }
 }
