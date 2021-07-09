@@ -7,7 +7,7 @@ const getData = async (
   next: NextFunction
 ): Promise<void> => {
   const auth = await google.auth.getClient({
-    keyFile: 'secrets-commit.json',
+    keyFile: 'secrets.json',
     scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
   });
   const id: number = res.locals.id;
