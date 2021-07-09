@@ -6,6 +6,7 @@ module.exports = {
       ...theme('colors'),
       'pink': '#FA98A5',
       'lightgray': '#C4C4C4',
+      'yellow': '#FEDECF'
     }),
     container: {
       center: true,

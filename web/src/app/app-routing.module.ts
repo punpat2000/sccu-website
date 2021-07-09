@@ -7,6 +7,10 @@ const routes: Routes = [
     path: 'tracking',
     component: TrackingComponent,
   },
+  {
+    path: '**',
+    redirectTo: 'tracking',
+  },
 ];
 
 @NgModule({
