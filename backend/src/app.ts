@@ -1,5 +1,7 @@
 import express from 'express';
-import { getData } from './controllers/google';
+import { decryptRequest } from './middlewares/decrypt';
+import { getData } from './middlewares/get-data';
+import { getDataTest } from './controllers/test.controller';
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -7,9 +9,6 @@ const port = process.env.PORT || 4000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/', async (req, res) => {
-  const data = await getData();
-  res.send(data);
-});
+app.get('/getDataTest', decryptRequest, getData, getDataTest);
 
 export { app, port };
