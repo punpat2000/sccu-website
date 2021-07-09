@@ -10,6 +10,7 @@ services:
       defecto:
         aliases:
           - db.sccu
+    image: punpat2000/sccu-backend
   web:
     build:
       context: ./web
@@ -20,5 +21,6 @@ services:
       - backend
     networks:
       - defecto
+    image: punpat2000/sccu-web
 networks:
   defecto:
