@@ -50,13 +50,11 @@
         >
           <img
             class="w-full h-full"
-            *ngIf="track_data.success_rate > 0"
-            src="../../assets/sccu.png"
-          />
-          <img
-            class="w-full h-full"
-            *ngIf="track_data.success_rate === 0"
-            src="../../assets/no-sccu.png"
+            [src]="
+              track_data.success_rate > 0
+                ? '../../assets/sccu.png'
+                : '../../assets/no-sccu.png'
+            "
           />
         </div>
       </div>
@@ -86,13 +84,11 @@
         >
           <img
             class="w-full h-full"
-            *ngIf="track_data.success_rate > 1"
-            src="../../assets/consider.png"
-          />
-          <img
-            class="w-full h-full"
-            *ngIf="track_data.success_rate <= 1"
-            src="../../assets/no-consider.png"
+            [src]="
+              track_data.success_rate > 1
+                ? '../../assets/consider.png'
+                : '../../assets/no-consider.png'
+            "
           />
         </div>
       </div>
@@ -122,13 +118,11 @@
         >
           <img
             class="w-full h-full"
-            *ngIf="track_data.success_rate > 2"
-            src="../../assets/office.png"
-          />
-          <img
-            class="w-full h-full"
-            *ngIf="track_data.success_rate <= 2"
-            src="../../assets/no-office.png"
+            [src]="
+              track_data.success_rate > 2
+                ? '../../assets/office.png'
+                : '../../assets/no-office.png'
+            "
           />
         </div>
       </div>
@@ -158,13 +152,11 @@
         >
           <img
             class="w-full h-full"
-            *ngIf="track_data.success_rate > 3"
-            src="../../assets/send.png"
-          />
-          <img
-            class="w-full h-full"
-            *ngIf="track_data.success_rate <= 3"
-            src="../../assets/no-send.png"
+            [src]="
+              track_data.success_rate > 3
+                ? '../../assets/send.png'
+                : '../../assets/no-send.png'
+            "
           />
         </div>
       </div>
@@ -194,13 +186,11 @@
         >
           <img
             class="w-full h-full"
-            *ngIf="track_data.success_rate > 4"
-            src="../../assets/receive.png"
-          />
-          <img
-            class="w-full h-full"
-            *ngIf="track_data.success_rate <= 4"
-            src="../../assets/no-receive.png"
+            [src]="
+              track_data.success_rate > 4
+                ? '../../assets/receive.png'
+                : '../../assets/no-receive.png'
+            "
           />
         </div>
       </div>
@@ -261,30 +251,8 @@
           ></div>
         </div>
         <div
-          class="
-            w-6
-            h-6
-            absolute
-            top-1/2
-            -mt-3
-            rounded-full
-            bg-white
-            border-pink border-4
-          "
-          *ngIf="track.success === true"
-        ></div>
-        <div
-          class="
-            w-6
-            h-6
-            absolute
-            top-1/2
-            -mt-3
-            rounded-full
-            bg-white
-            border-lightgray border-4
-          "
-          *ngIf="track.success === false"
+          [ngClass]="[track.success ? 'border-pink' : 'border-lightgray']"
+          class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-white border-4"
         ></div>
       </div>
 
