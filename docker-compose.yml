@@ -6,10 +6,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - '4000:4000'
-    networks:
-      defecto:
-        aliases:
-          - db.sccu
     image: punpat2000/sccu-backend
   web:
     build:
@@ -19,8 +15,6 @@ services:
       - '80:80'
     depends_on:
       - backend
-    networks:
-      - defecto
     image: punpat2000/sccu-web
-networks:
-  defecto:
+    links:
+      - 'backend:db.sccu'
