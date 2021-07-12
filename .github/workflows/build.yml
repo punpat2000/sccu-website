@@ -17,7 +17,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - uses: actions/checkout@v2
+
       - name: Build the stack
+        uses: actions/checkout@v2
         run: docker-compose up --no-start --build
+
       - name: Push to Docker Hun
+        run: docker-compose push
