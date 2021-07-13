@@ -1155,6 +1155,11 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
+"@chiragrupani/karma-chromium-edge-launcher@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@chiragrupani/karma-chromium-edge-launcher/-/karma-chromium-edge-launcher-2.1.1.tgz#3ba2261629f33608709324d22631b84ec06d05df"
+  integrity sha512-QK6M+1CYMbndWRaEAOpMW9kwF+JKcqyaEY2lqe8Nnm1hyOzSZaxTqXnLTZpk7RqQHhWCOduSU/XDvceWs4H74g==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npmjs.org/@csstools/convert-colors/-/convert-colors-1.4.0.tgz"
