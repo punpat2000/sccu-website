@@ -1,0 +1,17 @@
+name: Linting code
+
+on: pull_request
+
+jobs:
+  lint-frontend:
+    runs-on: ubuntu-latest
+    name: Lint all Angular code 🩺
+    steps:
+      - name: Checkout 🔎
+        uses: actions/checkout@v2
+      - name: Install modules 🕓
+        working-directory: ./web
+        run: yarn add --no-lockfile eslint @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template eslint-config-prettier eslint-plugin-prettier
+      - name: Run lint 💖
+        working-directory: ./web
+        run: yarn lint
