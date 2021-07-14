@@ -1,6 +1,9 @@
 name: Linting code
 
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - 'web/**'
 
 jobs:
   lint-frontend:
@@ -18,7 +21,7 @@ jobs:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.OS }}-build-${{ hashFiles('web/yarn.lock') }}
           restore-keys: |
             ${{ runner.OS }}-build-${{ env.cache-name }}-
             ${{ runner.OS }}-build-
