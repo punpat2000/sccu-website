@@ -20,7 +20,7 @@
     </button>
   </div>
   <h1 class="text-xl md:text-4xl mt-16 mr-4 ml-4 font-mitr text-brown">
-    ความคืบหน้าเรื่อง{{ track_data.topic }}
+    ความคืบหน้าเรื่อง{{ track_data.title }}
   </h1>
   <br /><br />
 
@@ -50,7 +50,7 @@
           <img
             class="w-full h-full"
             [src]="
-              track_data.success_rate > 0
+              track_data.status > 0
                 ? '../../assets/sccu.png'
                 : '../../assets/no-sccu.png'
             "
@@ -84,7 +84,7 @@
           <img
             class="w-full h-full"
             [src]="
-              track_data.success_rate > 1
+              track_data.status > 1
                 ? '../../assets/consider.png'
                 : '../../assets/no-consider.png'
             "
@@ -118,7 +118,7 @@
           <img
             class="w-full h-full"
             [src]="
-              track_data.success_rate > 2
+              track_data.status > 2
                 ? '../../assets/office.png'
                 : '../../assets/no-office.png'
             "
@@ -152,7 +152,7 @@
           <img
             class="w-full h-full"
             [src]="
-              track_data.success_rate > 3
+              track_data.status > 3
                 ? '../../assets/send.png'
                 : '../../assets/no-send.png'
             "
@@ -186,7 +186,7 @@
           <img
             class="w-full h-full"
             [src]="
-              track_data.success_rate > 4
+              track_data.status > 4
                 ? '../../assets/receive.png'
                 : '../../assets/no-receive.png'
             "
@@ -218,7 +218,7 @@
   </h2>
   <br />
   <h2 class="text-left text-base md:text-xl ml-3 pl-16 mr-3 text-brown">
-    ความคืบหน้าเรื่อง{{ track_data.topic }}
+    ความคืบหน้าเรื่อง{{ track_data.title }}
   </h2>
   <br />
 
@@ -233,12 +233,12 @@
       md:text-base
       text-brown
     "
-    *ngFor="let track of track_data.process"
+    *ngFor="let track of track_data.processes"
   >
     <div class="flex flex-row md:contents text-xs md:text-base">
       <div class="col-start-2 col-end-3 p-4 my-4">
         <p class="leading-tight justify-center text-black">
-          <span class="italic">{{ track.date }}</span>
+          <span class="italic">{{ track.timestamp }}</span>
         </p>
       </div>
 
@@ -257,7 +257,7 @@
 
       <div class="col-start-4 col-end-8 p-4 my-4">
         <p class="leading-tight text-justify text-black">
-          {{ track.detail }}
+          {{ track.details }}
         </p>
       </div>
     </div>

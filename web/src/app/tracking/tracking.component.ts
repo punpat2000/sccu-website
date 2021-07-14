@@ -10,6 +10,6 @@ export class TrackingComponent {
   track_data: any;
 
   constructor(public trackService: TrackingService) {
-    this.track_data = trackService.trackingdata;
+    this.track_data = this.trackService.trackingdata;
   }
 }
