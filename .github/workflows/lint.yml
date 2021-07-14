@@ -11,9 +11,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Cache
         uses: actions/cache@v2
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install modules 🕓
         working-directory: ./web
         run: yarn add --no-lockfile eslint @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template eslint-config-prettier eslint-plugin-prettier
