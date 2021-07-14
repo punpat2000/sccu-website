@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Cache 💵
-        working-directory: ./web
         id: cache
         uses: actions/cache@v2
         with:
