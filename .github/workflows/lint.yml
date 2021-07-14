@@ -27,6 +27,7 @@ jobs:
             ${{ runner.OS }}-
 
       - name: Install modules 🕓
+        if: steps.cache-primes.outputs.cache-hit != 'true'
         working-directory: ./web
         run: yarn add --no-lockfile eslint @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template eslint-config-prettier eslint-plugin-prettier
 
