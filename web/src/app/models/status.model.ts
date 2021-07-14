@@ -1,0 +1,7 @@
+export enum Status {
+  CONSIDERED,
+  PROCESSED,
+  DISCUSSED,
+  DOCUMENTED,
+  RESPONDED,
+}
