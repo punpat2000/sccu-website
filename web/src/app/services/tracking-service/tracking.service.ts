@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Status, TrackingData } from 'src/app/models';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
 export class TrackingService {
+  private readonly url: string = 'http://localhost:4000/getDataTest2?id=';
+
+  constructor(private http: HttpClient) {}
+
+  getData(id: string): Observable<TrackingData> {
+    return this.http.get<TrackingData>(`${this.url}${id}`);
+  }
+
   trackingdata: TrackingData = {
     trackingId: 'CU123456TH',
     title: 'ร้องเรียนกรณีมีบุคคลภายนอกเข้ามาบริเวณหอพักนิสิต',
@@ -27,6 +37,4 @@ export class TrackingService {
     status: Status.DOCUMENTED,
     owner: 'กินเก่ง น่ารัก',
   };
-
-  constructor() {}
 }
