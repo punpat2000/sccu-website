@@ -1,4 +1,4 @@
-name: Linting code
+name: Lint checking
 
 on:
   pull_request:
