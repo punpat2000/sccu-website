@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TrackingService } from '../services/tracking-service/tracking.service';
 import type { TrackingData } from 'src/app/models';
 
@@ -7,14 +7,21 @@ import type { TrackingData } from 'src/app/models';
   templateUrl: './tracking.component.html',
   styleUrls: ['./tracking.component.scss'],
 })
-export class TrackingComponent {
-  track_data: TrackingData;
+export class TrackingComponent implements OnInit {
+  track_data!: TrackingData;
+  dataLoaded!: Promise<boolean>;
 
-  constructor(public trackService: TrackingService) {
-    this.track_data = this.trackService.trackingdata;
+  constructor(private trackService: TrackingService) {}
+
+  ngOnInit(): void {
+    this.showData();
   }
 
-  showData(): void {
-    this.trackService.getData('123');
+  private showData(): void {
+    this.trackService.getData('test123').subscribe((data: TrackingData) => {
+      this.track_data = { ...data };
+      console.table(data);
+      this.dataLoaded = Promise.resolve(true);
+    });
   }
 }
