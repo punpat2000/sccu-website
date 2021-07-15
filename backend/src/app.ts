@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { decryptRequest } from './middlewares/decrypt';
 import { getData } from './middlewares/get-data';
 import { getDataTest } from './controllers/test.controller';
@@ -9,6 +10,7 @@ const port = process.env.PORT || 4000;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 app.get('/getDataTest', decryptRequest, getData, getDataTest);
 app.get('/getDataTest2', getDataTest2);

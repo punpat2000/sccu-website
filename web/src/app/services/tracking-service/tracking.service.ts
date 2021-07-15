@@ -1,13 +1,39 @@
 import { Injectable } from '@angular/core';
 import { Status, TrackingData } from 'src/app/models';
-
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
 export class TrackingService {
+  private readonly url: string = 'http://db.sccu';
+
+  constructor(private http: HttpClient) {}
+
+  getData(id: string): Observable<TrackingData> {
+    return this.http
+      .get<TrackingData>(`${this.url}/getDataTest2?id=${id}`)
+      .pipe(take(1), catchError(this.handleError.bind(this)));
+  }
+
+  private handleError(error: HttpErrorResponse): Observable<TrackingData> {
+    return of(this.trackingdata);
+    // switch (error.status) {
+    //   case 0:
+    //     return throwError('Something bad happened; please try again later.');
+    //   case 400:
+    //     return throwError('Bad request.');
+    //   case 404:
+    //     return throwError('Bad parameter.');
+    //   default:
+    //     return throwError(`Error status: ${error.status} occured.`);
+    // }
+  }
+
   trackingdata: TrackingData = {
     trackingId: 'CU123456TH',
-    title: 'ร้องเรียนกรณีมีบุคคลภายนอกเข้ามาบริเวณหอพักนิสิต',
+    title: 'Http Error',
     details:
       'เมื่อวันที่ ... มีบุคคลน่าสงสัยเข้ามาภายในบริเวณหอพักนิสิต เวลา ...',
     processes: [
@@ -27,6 +53,4 @@ export class TrackingService {
     status: Status.DOCUMENTED,
     owner: 'กินเก่ง น่ารัก',
   };
-
-  constructor() {}
 }

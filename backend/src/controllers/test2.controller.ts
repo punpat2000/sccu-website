@@ -11,9 +11,14 @@ const getDataTest2 = (req: Request, res: Response): void => {
       'เมื่อวันที่ ... มีบุคคลน่าสงสัยเข้ามาภายในบริเวณหอพักนิสิต เวลา ...',
     processes: [
       {
-        timestamp: '23/04/2564 15:03',
+        timestamp: new Date().toDateString(),
         details:
           'ได้รับการตอบกลับจากสำนักงานหอพักนิสิตแล้วผลสรุปว่าจะมีการจัดการปัญหาและเพิ่มมาตรการให้รัดกุมมากขึ้น',
+        success: true,
+      },
+      {
+        timestamp: new Date().toDateString(),
+        details: id,
         success: true,
       },
       {
