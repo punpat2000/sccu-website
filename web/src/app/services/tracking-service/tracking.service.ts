@@ -7,13 +7,13 @@ import { catchError, take } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class TrackingService {
-  private readonly url: string = 'http://localhost:4000/getDataTest2?id=';
+  private readonly url: string = 'http://db.sccu';
 
   constructor(private http: HttpClient) {}
 
-  getData(id: string = 'CU123456TH'): Observable<TrackingData> {
+  getData(id: string): Observable<TrackingData> {
     return this.http
-      .get<TrackingData>(`${this.url}${id}`)
+      .get<TrackingData>(`${this.url}/getDataTest2?id=${id}`)
       .pipe(take(1), catchError(this.handleError.bind(this)));
   }
 

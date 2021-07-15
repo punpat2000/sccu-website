@@ -25,7 +25,7 @@ export class TrackingComponent implements OnInit {
     this.showData();
   }
 
-  private showData(id: string = 'test123'): void {
+  private showData(id: string = 'CU123456TH'): void {
     this.trackService.getData(id).subscribe((data: TrackingData) => {
       this.track_data = { ...data };
       console.table(this.track_data);
