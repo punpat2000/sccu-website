@@ -17,4 +17,4 @@ services:
       - backend
     image: punpat2000/sccu-web
     links:
-      - 'backend:db.sccu'
+      - 'backend:db'

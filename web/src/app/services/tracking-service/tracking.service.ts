@@ -7,7 +7,7 @@ import { catchError, take } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class TrackingService {
-  private readonly url: string = 'http://db.sccu';
+  private readonly url: string = 'http://db';
 
   constructor(private http: HttpClient) {}
 
