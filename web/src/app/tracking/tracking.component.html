@@ -17,8 +17,10 @@
         class="w-3/5 p-2 mr-8 shadow-xl"
         type="text"
         placeholder="ค้นหาเรื่องร้องเรียน"
+        [formControl]="input"
       />
       <button
+        (click)="submit()"
         class="bg-pink hover:bg-red-400 text-white p-2 pl-4 pr-4 shadow-lg"
       >
         <p class="text-xs lg:text-lg">SEARCH</p>

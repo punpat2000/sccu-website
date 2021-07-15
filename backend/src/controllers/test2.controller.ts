@@ -17,6 +17,11 @@ const getDataTest2 = (req: Request, res: Response): void => {
         success: true,
       },
       {
+        timestamp: new Date().toDateString(),
+        details: id,
+        success: true,
+      },
+      {
         timestamp: '18/04/2564 15:03',
         details:
           'ทางคณะกรรมาธิการวิสามัญสวัสดิการนิสิตได้ส่งหนังสือไปยังสำนักงานหอพักนิสิตเรียบร้อยแล้วและกำลังรอการตอบรับ',
