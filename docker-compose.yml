@@ -12,7 +12,7 @@ services:
       context: ./web
       dockerfile: Dockerfile
     ports:
-      - '80:80'
+      - '80:4201'
     depends_on:
       - backend
     image: punpat2000/sccu-web
