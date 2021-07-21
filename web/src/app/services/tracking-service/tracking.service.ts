@@ -7,7 +7,7 @@ import { catchError, take } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class TrackingService {
-  private readonly url: string = 'http://backend:4000';
+  private readonly url: string = 'http://localhost:4000';
 
   constructor(private http: HttpClient) {}
 
