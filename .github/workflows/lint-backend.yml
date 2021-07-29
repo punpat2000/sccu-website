@@ -33,5 +33,5 @@ jobs:
         run: yarn add --no-lockfile eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier eslint-plugin-prettier
 
       - name: Run lint 💖
-        working-directory: ./web
+        working-directory: ./backend
         run: yarn lint
