@@ -12,14 +12,12 @@ export class TrackingComponent implements OnInit {
   private _executed: boolean = false;
   track_data!: TrackingData;
   dataLoaded!: Promise<boolean>;
-  input: FormControl;
+  input = new FormControl('', [
+    Validators.required,
+    Validators.pattern(/^\S*$/),
+  ]);
 
-  constructor(private trackService: TrackingService) {
-    this.input = new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^\S*$/),
-    ]);
-  }
+  constructor(private trackService: TrackingService) {}
 
   ngOnInit(): void {
     this.showData();
